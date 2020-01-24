@@ -9,6 +9,8 @@ public class main {
 //		ObjectIO wObj = new ObjectIO();
 //		customer.NewAccount();
 //		wObj.writeObject(customer,customer.getFileloc()+customer.getId() );
+		Employee employee = new Employee();
+		employee.employeeLogin();
 		
 
 	}	

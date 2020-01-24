@@ -13,6 +13,52 @@ public class Employee extends Account {
 	private static final long serialVersionUID = 1L;
 	private String fileloc = Paths.get("").toAbsolutePath().toString();
 
+	
+	
+	public boolean checkNull(String a) {
+		if(a != null) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public void employeeLogin() {
+		Employee employee = new Employee();
+		try { 
+			Scanner in = new Scanner(System.in);
+			String id = null;
+			boolean t= false;
+			while( t == false) {
+			System.out.println("Enter your ID number: ");
+			id = in.nextLine();
+			t= employee.checkNull(id);
+			}
+			String pass= null;
+			boolean w = false;
+			while(w == false) {
+				System.out.println("Enter your password: ");
+				pass = in.nextLine();
+				w= employee.checkNull(pass);
+			}
+			Login check = new Login();
+			ObjectIO robj = new ObjectIO();
+			employee = (Employee) robj.readObject(employee,employee.getFileloc()+"\\Employee\\"+ id);
+			String password = employee.getPassword();
+					if(check.login(pass, password) == true) {
+						System.out.println("Logged in");
+						in.close();
+					}else{
+						System.out.println("Failed to log in, try again");
+						employeeLogin();
+						in.close();
+						}
+			in.close();
+		}catch (Exception ex) {
+			System.out.println("Account does not exist");
+			employeeLogin();
+		}
+		
+	}
 	public void empolyeeMenu() {
 		Customer customer = new Customer();
 		try (Scanner in = new Scanner(System.in)) {

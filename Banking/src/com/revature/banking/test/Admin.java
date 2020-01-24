@@ -9,6 +9,40 @@ public class Admin extends Employee{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public void adminLogin() {		
+		Admin admin = new Admin();
+		try { 
+			Scanner in = new Scanner(System.in);
+			String id = null;
+			boolean t= false;
+			while( t == false) {
+			System.out.println("Enter your ID number: ");
+			id = in.nextLine();
+			t= admin.checkNull(id);
+			}
+			String pass= null;
+			boolean w = false;
+			while(w == false) {
+				System.out.println("Enter your password: ");
+				pass = in.nextLine();
+				w= admin.checkNull(pass);
+			}
+			Login check = new Login();
+			ObjectIO robj = new ObjectIO();
+			admin = (Admin) robj.readObject(admin,admin.getFileloc()+"\\Admin\\"+ id);
+			String password = admin.getPassword();
+					if(check.login(pass, password) == true) {
+						System.out.println("Logged in");
+						in.close();
+					}else{
+						System.out.println("Failed to log in, try again");
+						adminLogin();
+						}
+		}catch (Exception ex) {
+			System.out.println("Account does not exist");
+			adminLogin();	
+		}
+	}
 	
 	public void createEmployee() {
 		System.out.println("###########################################################################");
