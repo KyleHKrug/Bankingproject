@@ -19,10 +19,20 @@ public class Customer extends Account implements Serializable{
 		Customer customer = new Customer();
 		try { 
 			Scanner in = new Scanner(System.in);
+			String id = null;
+			boolean t= false;
+			while( t == false) {
 			System.out.println("Enter your ID number: ");
-			String id = in.nextLine();
-			System.out.println("Enter your password: ");
-			String pass = in.nextLine();
+			id = in.nextLine();
+			t= customer.checkNull(id);
+			}
+			String pass= null;
+			boolean w = false;
+			while(w == false) {
+				System.out.println("Enter your password: ");
+				pass = in.nextLine();
+				w= customer.checkNull(pass);
+			}
 			Login check = new Login();
 			ObjectIO robj = new ObjectIO();
 			customer = (Customer) robj.readObject(customer,getFileloc()+id);

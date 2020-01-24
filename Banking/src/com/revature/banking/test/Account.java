@@ -85,4 +85,11 @@ public class Account implements Serializable {
 			in.close();
 		}
 	}
+	public boolean checkNull(String a) {
+		if(a != null) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }

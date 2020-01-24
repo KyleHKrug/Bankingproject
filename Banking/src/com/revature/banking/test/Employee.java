@@ -13,15 +13,6 @@ public class Employee extends Account {
 	private static final long serialVersionUID = 1L;
 	private String fileloc = Paths.get("").toAbsolutePath().toString();
 
-	
-	
-	public boolean checkNull(String a) {
-		if(a != null) {
-			return true;
-		}else {
-			return false;
-		}
-	}
 	public void employeeLogin() {
 		Employee employee = new Employee();
 		try { 
