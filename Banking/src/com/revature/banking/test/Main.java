@@ -1,8 +1,6 @@
 package com.revature.banking.test;
 
-
-
-public class main {
+public class Main {
 	public static void main(String [] args) {
 		//example of how to write to the specific file
 //		Customer customer = new Customer();
@@ -12,6 +10,11 @@ public class main {
 		Employee employee = new Employee();
 		employee.employeeLogin();
 		
+		Customer customer = new Customer();
+		customer.loginCustomer();
+		
+		Admin admin = new Admin();
+		admin.adminLogin();
 
 	}	
 }
