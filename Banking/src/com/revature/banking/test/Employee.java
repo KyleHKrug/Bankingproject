@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Employee extends Account {
 	
-	//Used to display the balance to the second decimal place
+	// used to display the balance to the second decimal place
 	private static DecimalFormat df = new DecimalFormat("0.00");
 	private static final long serialVersionUID = 1L;
 	private String fileloc = Paths.get("").toAbsolutePath().toString();
@@ -131,7 +131,7 @@ public class Employee extends Account {
 		}
 	}
 	public void view_customer(Customer customer) {
-		//used to see customer information
+		// used to see customer information
 		
 		System.out.println("###########################################################################");
 		System.out.println("Account holder: " + customer.getLast_name() + "," + customer.getFirst_name());
