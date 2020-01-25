@@ -86,6 +86,7 @@ public class Account implements Serializable {
 		
 		try (Scanner in = new Scanner(System.in)) {
 			
+			@SuppressWarnings("unused")
 			String firstname, info, lastname,address, password,id;
 			System.out.println("Enter the account holders First Name: ");
 			setFirst_name(firstname=in.nextLine());
