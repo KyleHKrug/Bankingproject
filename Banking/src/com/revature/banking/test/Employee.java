@@ -62,6 +62,7 @@ public class Employee extends Account {
 		}
 		
 	}
+	
 	public void employeeMenu() {
 		
 		Customer customer = new Customer();
@@ -100,6 +101,7 @@ public class Employee extends Account {
 			in.close();
 		}
 	}
+	
 	public void approve(Customer customer) {
 		
 		Scanner in = new Scanner(System.in);
@@ -122,7 +124,7 @@ public class Employee extends Account {
 				System.out.println("Okay, enter anything to load another customer");
 				String d = in.nextLine();
 				
-				while( d == null) {
+				while(d == null) {
 					d = in.nextLine();
 				}
 				
@@ -130,6 +132,7 @@ public class Employee extends Account {
 			}
 		}
 	}
+	
 	public void view_customer(Customer customer) {
 		// used to see customer information
 		
@@ -148,6 +151,5 @@ public class Employee extends Account {
 	
 	public void setFileloc(String fileloc) {
 		this.fileloc = fileloc;
-	}
-	
+	}	
 }

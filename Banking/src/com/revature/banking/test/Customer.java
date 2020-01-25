@@ -23,7 +23,7 @@ public class Customer extends Account implements Serializable{
 			Scanner in = new Scanner(System.in);
 			String id = null;
 			boolean t= false;
-			while( t == false) {
+			while(t == false) {
 				
 			System.out.println("Enter your ID number: ");
 			id = in.nextLine();
@@ -47,7 +47,7 @@ public class Customer extends Account implements Serializable{
 			
 			if(customer.isDisabled() == false) {
 				
-				if( customer.isApproved() == true) {
+				if(customer.isApproved() == true) {
 					
 					if(check.login(pass, password) == true) {
 						
@@ -66,7 +66,6 @@ public class Customer extends Account implements Serializable{
 				System.out.println("Your account has been disabled");
 				System.out.println("Please see a bank admin");
 			}
-			
 		}catch (Exception ex) {
 			loginCustomer();
 			

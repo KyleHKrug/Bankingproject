@@ -7,14 +7,15 @@ public class Main {
 //		ObjectIO wObj = new ObjectIO();
 //		customer.NewAccount();
 //		wObj.writeObject(customer,customer.getFileloc()+customer.getId() );
-		Employee employee = new Employee();
-		employee.employeeLogin();
 		
 		Customer customer = new Customer();
-		customer.loginCustomer();
+		//customer.loginCustomer();
 		
-		Admin admin = new Admin();
-		admin.adminLogin();
+		Employee employee = new Employee();
+		employee.view_customer(customer);
+	
+		//Admin admin = new Admin();
+		//admin.adminLogin();
 
 	}	
 }
