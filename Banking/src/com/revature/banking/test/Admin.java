@@ -164,7 +164,7 @@ public class Admin extends Employee{
 		try (Scanner in = new Scanner(System.in)) {
 			
 			if (customer.isDisabled() == true) {
-				System.out.println("Do you wish to disable this customer?[Y/N]");
+				System.out.println("Do you wish to disable this customer? [Y/N]");
 				String c = in.nextLine();
 				
 				if(c.equalsIgnoreCase("y")) {
@@ -175,7 +175,7 @@ public class Admin extends Employee{
 					System.out.println("Okay");
 					
 				}else if (customer.isDisabled() == false) {
-					System.out.println("Do you wish to enable this customer?[Y/N]");
+					System.out.println("Do you wish to enable this customer? [Y/N]");
 					c = in.nextLine();
 					
 					if(c.equalsIgnoreCase("y")) {

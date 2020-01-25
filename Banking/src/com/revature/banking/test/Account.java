@@ -88,22 +88,22 @@ public class Account implements Serializable {
 			
 			@SuppressWarnings("unused")
 			String firstname, info, lastname,address, password,id;
-			System.out.println("Enter the account holders First Name: ");
+			System.out.println("Enter the account holder's first name: ");
 			setFirst_name(firstname=in.nextLine());
 			
-			System.out.println("Enter the account holders Last Name: ");
+			System.out.println("Enter the account holder's last name: ");
 			setLast_name(lastname=in.nextLine());
 			
-			System.out.println("Enter the account holders ID: ");
+			System.out.println("Enter the account holder's ID: ");
 			setId(id = in.nextLine());
 			
-			System.out.println("Enter the account holders Password: ");
+			System.out.println("Enter the account holder's password: ");
 			setPassword(password = in.nextLine());
 			
-			System.out.println("Enter the account holders Address: ");
+			System.out.println("Enter the account holder's address: ");
 			setAddress(address=in.nextLine());
 			
-			System.out.println("Enter the account holders Additional Info: ");
+			System.out.println("Enter the account holder's additional info: ");
 			setInfo(info = in.nextLine());
 			
 			in.close();
@@ -117,6 +117,7 @@ public class Account implements Serializable {
 			
 		}else {
 			return false;
+			
 		}
 	}
 }

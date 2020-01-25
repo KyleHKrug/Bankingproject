@@ -18,7 +18,7 @@ public class ObjectIO implements Serializable {
 	
 	public void serializeObject(Object object, String file) {
 		
-		// fout, file out, writes to a file
+		// f out, file out, writes to a file
 		FileOutputStream fout = null;
 		// establishes the Object output stream
 		ObjectOutputStream oos = null;
@@ -26,7 +26,7 @@ public class ObjectIO implements Serializable {
 		try {
 			
 			fout = new FileOutputStream(file +".txt");// establishes which file to write to
-			oos = new ObjectOutputStream(fout);// writes object to the fout file
+			oos = new ObjectOutputStream(fout);// writes object to the f out file
 			oos.writeObject(object);// writes object to the file
 			oos.flush();
 			System.out.println("Done");

@@ -59,7 +59,7 @@ public class Customer extends Account implements Serializable{
 						loginCustomer();					
 					}
 				}else{
-					System.out.println("The Account has not been approved");
+					System.out.println("The account has not been approved");
 					System.out.println("It will be approved shortly!");
 				}
 			}else{
@@ -121,12 +121,12 @@ public class Customer extends Account implements Serializable{
 							
 						}else{
 							
-							System.out.println("Invalid entery");
+							System.out.println("Invalid entry");
 							menu(customer);
 						}
 					}else {
 						
-						System.out.println("Invalid entery");
+						System.out.println("Invalid entry");
 						menu(customer);
 					}
 					
@@ -163,7 +163,7 @@ public class Customer extends Account implements Serializable{
 
 	public void withdraw(double d, double amount) {
 		
-		// subtracts the amount from a users balance
+		// subtracts the amount from a user's balance
 		double newbalance;
 		
 		if (amount > 0){

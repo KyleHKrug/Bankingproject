@@ -121,7 +121,7 @@ public class Employee extends Account {
 				
 			}else {
 				
-				System.out.println("Okay, enter anything to load another customer");
+				System.out.println("Enter anything to load another customer");
 				String d = in.nextLine();
 				
 				while(d == null) {
