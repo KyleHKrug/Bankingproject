@@ -129,7 +129,7 @@ public class Admin extends Employee{
 			
 			System.out.println("Enter (C) to deposit/withdraw/transfer funds");
 			System.out.println("Enter (A) to approve the customer account");
-			System.out.println("Enter (D) to disable/ enable customer account");
+			System.out.println("Enter (D) to disable/enable customer account");
 			System.out.println("Enter (X) to exit");
 			
 			String a = in.nextLine();
