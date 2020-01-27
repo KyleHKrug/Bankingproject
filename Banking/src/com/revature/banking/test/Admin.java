@@ -38,13 +38,14 @@ public class Admin extends Employee{
 
 			Login check = new Login();
 			ObjectIO robj = new ObjectIO();
-			admin = (Admin) robj.readObject(admin, admin + "/Users/aliareed/Bankingproject/Banking/Admin/" + id);
+			
+			admin = (Admin) robj.readObject(admin, "/Users/aliareed/Bankingproject/Banking/Admin/" + id);
 			String password = admin.getPassword();
 
 					if(check.login(pass, password) == true) {
 						
 						System.out.println("Logged in!");
-						in.close();
+					//	in.close();
 
 					}else{
 						
@@ -82,6 +83,8 @@ public class Admin extends Employee{
 
 		ObjectIO wobj = new ObjectIO();
 		wobj.writeObject(admin, "/Users/aliareed/Bankingproject/Banking/Admin/" + admin.getId());	
+		
+		System.out.println("Welcome to the family new admin!");
 		
 	}
 

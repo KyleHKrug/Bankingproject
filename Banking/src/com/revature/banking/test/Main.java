@@ -10,20 +10,20 @@ public class Main {
 	static ObjectIO rObj = new ObjectIO();
 	static ObjectIO wObj = new ObjectIO();
 
-	static Scanner scanningStan = new Scanner(System.in);
+	public static Scanner scanningStan = new Scanner(System.in);
 	
 	@SuppressWarnings({ "resource", "unused" })
 	public static void main(String [] args) {
 			
 		String userType;
 		
-		System.out.println("Hello and welcome to Kyle and Alia's Bank!\n\nAre you a:\n");
+		System.out.println("Hello and welcome to Alia and Kyle's Bank!\n\nAre you a:\n");
 		System.out.println("1. New customer?");
 		System.out.println("2. Returning customer?");
 		System.out.println("3. Employee?");
 		System.out.println("4. Administrator?");
 		
-		userType = scanningStan.next();
+		userType = scanningStan.nextLine();
 		
 		switch(userType) {
 		
@@ -34,7 +34,7 @@ public class Main {
 				System.out.println("Would you like to:");
 				System.out.println("1. Create an account?");
 				System.out.println("2. Go away?");
-				choices = scanningStan.next();
+				choices = scanningStan.nextLine();
 				
 				if(choices.equals("1")) {
 										
@@ -84,14 +84,22 @@ public class Main {
 				break;
 				
 			case "4":
+							
+				admin.adminLogin();
+			
+			//	admin.getCustomer();
 				
-				System.out.println("\nWelcome valued administrator!");
+				actualWorkingAdminMenu();
+				
+		//		admin.customerOptions(customer);
+				
+			//	admin.createAdmin();
+				//				
+			//	admin.createEmployee();
 //				
-				admin.createEmployee();
+		//		wObj.writeObject(employee, "/Users/aliareed/Bankingproject/Banking/Employee/");
 //				
-				wObj.writeObject(employee, "/Users/aliareed/Bankingproject/Banking/Employee/");
-//				
-				System.out.println("Welcome to the family, new employee!");
+		//		System.out.println("Welcome to the family, new employee!");
 				
 				break;
 				
@@ -104,19 +112,34 @@ public class Main {
 
 	public static void actualWorkingEmployeeMenu() {
 		
+		String useAGoddamnSwitchStatementKYLE = null;
+		
+		scanningStan.reset();
+		
 		System.out.println("\nWelcome valued employee!");
 		System.out.println("What would you like to do today?");
 						
 		System.out.println("1. View view all customer information!");
 		System.out.println("2. Approve a customer account!");
 		System.out.println("3. Exit!");
+						
+//	try{useAGoddamnSwitchStatementKYLE = Integer.parseInt(scanningStan.nextLine());}
+//	
+//	catch(Exception ex) {
+//		
+//		useAGoddamnSwitchStatementKYLE = 0;
+//		
+//	}
 		
-		String useAGoddamnSwitchStatementKYLE = scanningStan.nextLine();
+		useAGoddamnSwitchStatementKYLE = scanningStan.nextLine();
+	
+		System.out.println(useAGoddamnSwitchStatementKYLE);
 		
 		switch(useAGoddamnSwitchStatementKYLE)	{
 		
 		case "1":
 
+		//	System.out.println("aaaaaaaaaaaa");
 				employee.view_customer(customer);
 				break;
 
@@ -135,8 +158,50 @@ public class Main {
 				System.out.println("Try again buster");
 				break;
 				
-			}
+			}		
+	}
+	
+public static void actualWorkingAdminMenu() {
 		
+		String useAGoddamnSwitchStatementKYLE2 = null;
+		
+		scanningStan.reset();
+		
+		System.out.println("\nWelcome valued administrator!");
+		System.out.println("What would you like to do today?");
+						
+		System.out.println("1. View view all customer information!");
+		System.out.println("2. Approve a customer account!");
+		System.out.println("3. Exit!");
+						
+		useAGoddamnSwitchStatementKYLE2 = scanningStan.nextLine();
+	
+		System.out.println(useAGoddamnSwitchStatementKYLE2);
+		
+		switch(useAGoddamnSwitchStatementKYLE2)	{
+		
+		case "1":
+
+		//	System.out.println("aaaaaaaaaaaa");
+				employee.view_customer(customer);
+				break;
+
+		case "2":
+			
+				employee.approve(customer);
+				break;
+
+		case "3":
+			
+				System.out.println("Thanks for coming! Have a good day!");
+				System.exit(0);
+				
+		default:
+			
+				System.out.println("Try again buster");
+				break;
+				
+			}		
 	}
 	
 }

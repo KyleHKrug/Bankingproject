@@ -149,7 +149,7 @@ public class Customer extends Account implements Serializable{
 						menu(customer);
 					}
 
-					in.close();
+			//		in.close();
 		}
 		
 	}

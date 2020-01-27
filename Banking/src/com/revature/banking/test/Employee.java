@@ -16,7 +16,7 @@ public class Employee extends Account {
 		Employee employee = new Employee();
 		try { 
 
-			Scanner in = new Scanner(System.in);
+			Scanner in = Main.scanningStan;
 			String id = null;
 			boolean t = false;
 
@@ -54,10 +54,10 @@ public class Employee extends Account {
 
 						System.out.println("Cannot log in, try again!");
 						employeeLogin();
-						in.close();
+					//	in.close();
 
 						}
-			in.close();
+	//		in.close();
 
 		}catch (Exception ex) {
 
@@ -111,7 +111,7 @@ public class Employee extends Account {
 				}
 			}
 
-			in.close();
+		//	in.close();
 }
 
 	public void approve(Customer customer) {
@@ -142,7 +142,7 @@ public class Employee extends Account {
 					
 				}
 
-				in.close();				
+			//	in.close();				
 			}
 		}
 	}
