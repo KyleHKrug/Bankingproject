@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Employee extends Account {
-
+	
 	// used to display the balance to the second decimal place
 	private static DecimalFormat df = new DecimalFormat("0.00");
 	private static final long serialVersionUID = 1L;
@@ -71,11 +71,15 @@ public class Employee extends Account {
 	public void employeeMenu() {
 
 		Customer customer = new Customer();
-
-		try (Scanner in = new Scanner(System.in)) {
+		
+		String id = null;
+		
+		Scanner in = new Scanner(System.in);
 
 			System.out.println("Enter Customer ID to view their information");
-			String id = in.nextLine();
+							
+			id = (in.nextLine());
+				
 			ObjectIO objI = new ObjectIO();
 			customer = (Customer)objI.readObject(customer, "/Users/aliareed/Bankingproject/Banking/Customer/" + id);
 			String c ="";
@@ -108,8 +112,7 @@ public class Employee extends Account {
 			}
 
 			in.close();
-		}
-	}
+}
 
 	public void approve(Customer customer) {
 

@@ -77,7 +77,7 @@ public class Customer extends Account implements Serializable{
 				System.out.println("Your account has been disabled!");
 				System.out.println("Please see a bank admin");
 			}
-			
+		//	in.close();
 		}catch (Exception ex) {
 			
 		//	loginCustomer();
@@ -89,13 +89,12 @@ public class Customer extends Account implements Serializable{
 	public void menu(Customer customer) {
 
 		ObjectIO save = new ObjectIO();
-		System.out.println("Welcome back!");
 		System.out.println("Your current balance is : $"+ df.format(customer.getBalance()));
 
-		System.out.println("Enter a (D) to Deposit an amount into your balance");
-		System.out.println("Enter a (W) to Withdraw an amount from your balance");
-		System.out.println("Enter a (T) to Transfer an amount to another member");
-		System.out.println("Enter a (E) to Exit Your account");
+		System.out.println("Press D to deposit an amount into your balance!");
+		System.out.println("Press W to withdraw an amount from your balance!");
+		System.out.println("Press T to transfer an amount to another member!");
+		System.out.println("Press E to exit your account!");
 
 		try (Scanner in = new Scanner(System.in)) {
 
@@ -105,7 +104,7 @@ public class Customer extends Account implements Serializable{
 
 						if( c.equalsIgnoreCase("D")) {
 
-							System.out.println("Enter the amount you wish to depoit");
+							System.out.println("Enter the amount you wish to deposit!");
 							double amount = in.nextDouble();
 
 							customer.deposit(customer.getBalance(), amount);
@@ -114,10 +113,10 @@ public class Customer extends Account implements Serializable{
 
 						}else if (c.equalsIgnoreCase("T")) {
 
-							System.out.println("Enter the ID of the member you wish to transfer funds to: ");
+							System.out.println("Enter the ID of the member you wish to transfer funds to!");
 							String tCID = in.nextLine();
 							
-							System.out.println("Enter the amount you wish to transfer: ");
+							System.out.println("Enter the amount you wish to transfer!");
 							double amount = in.nextDouble();
 							
 							customer.transfer(tCID, customer.getId(), amount, customer);
@@ -126,7 +125,7 @@ public class Customer extends Account implements Serializable{
 
 						}else if (c.equalsIgnoreCase("W")) {
 
-							System.out.println("Enter the amount you with to withdraw");
+							System.out.println("Enter the amount you with to withdraw!");
 							double amount = in.nextDouble();
 							
 							customer.withdraw(customer.getBalance(), amount);

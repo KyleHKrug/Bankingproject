@@ -4,16 +4,17 @@ import java.util.Scanner;
 
 public class Main {
 	
+	static Customer customer = new Customer();
+	static Employee employee = new Employee();
+	static Admin admin = new Admin();
+	static ObjectIO rObj = new ObjectIO();
+	static ObjectIO wObj = new ObjectIO();
+
+	static Scanner scanningStan = new Scanner(System.in);
+	
 	@SuppressWarnings({ "resource", "unused" })
 	public static void main(String [] args) {
 			
-		Customer customer = new Customer();
-		Employee employee = new Employee();
-		Admin admin = new Admin();
-		ObjectIO rObj = new ObjectIO();
-		ObjectIO wObj = new ObjectIO();
-
-		Scanner scanningStan = new Scanner(System.in);
 		String userType;
 		
 		System.out.println("Hello and welcome to Kyle and Alia's Bank!\n\nAre you a:\n");
@@ -57,19 +58,19 @@ public class Main {
 				System.out.println("\nWelcome valued returning customer!");
 			
 				customer.loginCustomer();
+				System.out.println("Welcome back!");
 				customer.menu(customer);
 				
 				break;
 				
 			case "3":
-				
+								
 				employee.employeeLogin();
-				employee.employeeMenu();
-//				employee.approve(customer);
 				
-//				System.out.println("\nWelcome valued employee!");
-//				System.out.println("What would you like to do today?");
-//				
+				actualWorkingEmployeeMenu();
+				
+//				employee.employeeMenu();
+//				employee.approve(customer);		
 //				System.out.println("Please enter the user ID of the customer you wish to approve/deny!");
 //				choices = scanningStan.next();
 //				
@@ -80,47 +81,62 @@ public class Main {
 //				wObj.writeObject(customer, "/Users/aliareed/Bankingproject/Banking/Customer/aa");
 //				customer.isApproved();
 
-				
 				break;
 				
 			case "4":
 				
 				System.out.println("\nWelcome valued administrator!");
 //				
-//				admin.createEmployee();
+				admin.createEmployee();
 //				
-//				wObj1.writeObject(employee1, "/Users/aliareed/Bankingproject/Banking/Employee/");
+				wObj.writeObject(employee, "/Users/aliareed/Bankingproject/Banking/Employee/");
 //				
-//				System.out.println("Welcome to the family, new employee!");
+				System.out.println("Welcome to the family, new employee!");
 				
 				break;
 				
 			default:
 				
 				break;
-		}			
-//		scanningStan.close();
+		}
+		
 	}
+
+	public static void actualWorkingEmployeeMenu() {
 		
-//	@SuppressWarnings("resource")
-//	public static boolean mariosMenu() {
-//	
-//		return true;
+		System.out.println("\nWelcome valued employee!");
+		System.out.println("What would you like to do today?");
+						
+		System.out.println("1. View view all customer information!");
+		System.out.println("2. Approve a customer account!");
+		System.out.println("3. Exit!");
+		
+		String useAGoddamnSwitchStatementKYLE = scanningStan.nextLine();
+		
+		switch(useAGoddamnSwitchStatementKYLE)	{
+		
+		case "1":
+
+				employee.view_customer(customer);
+				break;
+
+		case "2":
+			
+				employee.approve(customer);
+				break;
+
+		case "3":
+			
+				System.out.println("Thanks for coming! Have a good day!");
+				System.exit(0);
 				
-		//customer.loginCustomer();
-		//customer.newAccount();
-	//	rObj.writeObject(customer, customer.getFileloc()+customer.getId());
-	//	customer = (Customer) rObj.readObject(customer, customer.getFileloc() + "a");
-	//	System.out.println(customer.getFirst_name());
-		//customer = (Customer)readObject;
-
-		//object.readObject(object, "00001");
-
-		//customer.loginCustomer();
-
-		//employee.view_customer(customer);
-
-		//admin.adminLogin();
-//	}
+		default:
+			
+				System.out.println("Try again buster");
+				break;
+				
+			}
 		
+	}
+	
 }

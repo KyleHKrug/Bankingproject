@@ -25,7 +25,7 @@ public class ObjectIO implements Serializable {
 
 		try {
 
-			fout = new FileOutputStream(file +".txt");// establishes which file to write to
+			fout = new FileOutputStream(file + ".txt");// establishes which file to write to
 			oos = new ObjectOutputStream(fout);// writes object to the f out file
 			oos.writeObject(object);// writes object to the file
 		//  oos.flush();
