@@ -105,6 +105,8 @@ public class Main {
 				
 			default:
 				
+				System.out.println("Try again buster");
+				
 				break;
 		}
 		
